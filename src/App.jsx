@@ -1,121 +1,56 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
-import "./App.css";
+import {
+  LayoutDashboard,
+  Wallet,
+  ArrowLeftRight,
+  TrendingUp,
+} from "lucide-react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    /* Główny kontener "telefonu" */
+    <div className="container">
+      {/* 1. GÓRA: Stały nagłówek z powitaniem i saldem */}
+      <header className="app-header">
+        <div className="user-profile">
+          <h2>Witaj, Jakub!</h2>
+          <div className="avatar">TO DO</div>
         </div>
-        <div>
-          <h1>Hello World!</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+        <div className="balance-display">
+          <p>Ogólne Saldo</p>
+          <h1>23 450,00 PLN</h1>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
+      {/* 2. ŚRODEK: Przewijana treść (scrollable) */}
+      <main className="content-area">
+        <section className="stats-section">
+          <h3>Przychody vs Wydatki</h3>
+          {/* Tu wejdzie Twój wykres "Przychody vs Wydatki" */}
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <section className="transactions-section">
+          <h3>Ostatnie Transakcje</h3>
+          <div className="transaction-item">
+            {/* 1. Lewa strona: Ikona w małym kwadracie */}
+            <div className="icon-wrapper">X</div>
+            <div className="details">
+              <span className="title">Płaca</span>
+            </div>
+            <div className="amount">12 000,00</div>
+          </div>
+        </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* 3. DÓŁ: Stała nawigacja */}
+      <footer className="app-footer">
+        <nav className="bottom-nav">
+          <button className="nav-item active">Przegląd</button>
+          <button className="nav-item">+</button> {/* Przycisk akcji */}
+          <button className="nav-item">Statystyki</button>
+        </nav>
+      </footer>
+    </div>
   );
 }
 
