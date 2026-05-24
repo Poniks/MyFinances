@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./App.module.scss";
 import Header from "./components/dashboard/Header";
 import StatsWidget from "./components/dashboard/StatsWidget";
 import { Briefcase, ShoppingCart, Coffee, Car } from "lucide-react";
@@ -9,16 +10,16 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-function App() {
-  const transactionsData = [
-    { id: 1, title: "Płaca", amount: 12000, icon: Briefcase },
-    { id: 2, title: "Zakupy", amount: -250.5, icon: ShoppingCart },
-    { id: 3, title: "Kawa", amount: -18.0, icon: Coffee },
-    { id: 4, title: "Paliwo", amount: -300.0, icon: Car },
-  ];
+const transactionsData = [
+  { id: 1, title: "Płaca", amount: 12000, icon: Briefcase },
+  { id: 2, title: "Zakupy", amount: -250.5, icon: ShoppingCart },
+  { id: 3, title: "Kawa", amount: -18.0, icon: Coffee },
+  { id: 4, title: "Paliwo", amount: -300.0, icon: Car },
+];
 
+function App() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       {/* GÓRA: Stały nagłówek z powitaniem i saldem */}
       <Header />
       {/* ŚRODEK: Przewijana treść */}

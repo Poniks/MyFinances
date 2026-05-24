@@ -1,7 +1,9 @@
+import styles from "./Header.module.scss";
+
 const Header = () => {
   return (
-    <header className="app-header">
-      <div className="user-profile">
+    <header className={styles.app_header}>
+      <div className={styles.user_profile}>
         <h2>Witaj, Jakub!</h2>
       </div>
       <div className="balance-display">

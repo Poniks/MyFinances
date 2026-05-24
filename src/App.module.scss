@@ -1,0 +1,11 @@
+.container {
+  width: 430px;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: #f8fafc; // To Change
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
