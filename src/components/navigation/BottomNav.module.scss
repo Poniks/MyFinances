@@ -1,0 +1,80 @@
+@use "../../styles/variables" as v;
+
+.app_footer {
+  width: 100%;
+  max-width: 430px;
+  background-color: v.$white;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+
+  .bottom_nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    padding: 0 10px;
+
+    .nav_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      color: #b0b0b0; // Kolor nieaktywny
+      cursor: pointer;
+      flex: 1;
+      height: 100%;
+      position: relative;
+      transition: all 0.3s ease;
+
+      span {
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      &.active {
+        color: v.$blue;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 35px;
+          height: 3px;
+          background-color: v.$blue;
+          border-radius: 0 0 4px 4px;
+        }
+      }
+
+      &:hover:not(.active) {
+        color: #666;
+      }
+    }
+
+    .plus_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      background: none;
+      border: 1.5px solid #dcdcdc;
+      border-radius: 50%;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin: 0 10px;
+
+      &:hover {
+        border-color: v.$blue;
+        color: v.$blue;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}

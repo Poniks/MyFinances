@@ -1,22 +1,2 @@
 @use "variables";
 @use "global";
-@use "layout";
-
-.container {
-  .app-footer {
-    height: 80px;
-
-    .bottom-nav {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      height: 100%;
-
-      .nav-item {
-        height: 100%;
-        width: 100%;
-        background-color: orange; // To Change
-      }
-    }
-  }
-}

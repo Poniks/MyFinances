@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.scss";
 import Header from "./components/dashboard/Header";
 import StatsWidget from "./components/dashboard/StatsWidget";
+import BottomNav from "./components/navigation/BottomNav";
 import { Briefcase, ShoppingCart, Coffee, Car } from "lucide-react";
 import {
   LayoutDashboard,
@@ -61,13 +62,7 @@ function App() {
       {/* ŚRODEK: Przewijana treść */}
       <StatsWidget data={transactionsData} />
       {/* DÓŁ: Stała nawigacja */}
-      <footer className="app-footer">
-        <nav className="bottom-nav">
-          <button className="nav-item active">Przegląd</button>
-          <button className="nav-item">+</button>
-          <button className="nav-item">Statystyki</button>
-        </nav>
-      </footer>
+      <BottomNav />
     </div>
   );
 }
