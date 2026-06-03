@@ -11,10 +11,46 @@ import {
 } from "lucide-react";
 
 const transactionsData = [
-  { id: 1, title: "Płaca", amount: 12000, icon: Briefcase },
-  { id: 2, title: "Zakupy", amount: -250.5, icon: ShoppingCart },
-  { id: 3, title: "Kawa", amount: -18.0, icon: Coffee },
-  { id: 4, title: "Paliwo", amount: -300.0, icon: Car },
+  {
+    id: 1,
+    title: "Płaca",
+    amount: 600,
+    icon: Briefcase,
+    type: "income",
+    date: "2026-04-10",
+  },
+  {
+    id: 2,
+    title: "Zakupy",
+    amount: 250.5,
+    icon: ShoppingCart,
+    type: "expense",
+    date: "2026-06-10",
+  },
+  {
+    id: 3,
+    title: "Kawa",
+    amount: 18.0,
+    icon: Coffee,
+    type: "expense",
+    date: "2026-05-15",
+  },
+  {
+    id: 4,
+    title: "Paliwo",
+    amount: 300.0,
+    icon: Car,
+    type: "expense",
+    date: "2026-04-15",
+  },
+  {
+    id: 5,
+    title: "XTB",
+    amount: 500.0,
+    icon: TrendingUp,
+    type: "investment",
+    date: "2026-04-20",
+  },
 ];
 
 function App() {

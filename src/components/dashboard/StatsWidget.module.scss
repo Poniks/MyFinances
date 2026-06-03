@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as v;
 
 .content_area {
   flex: 1;
@@ -6,25 +6,42 @@
   padding: 1rem;
 
   .stats_section {
-    height: 100px; // To Change
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
   }
 
   .transactions_section {
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
     .transaction_item {
       display: flex;
       align-items: center;
-      padding: 5px 0;
+      padding: 12px 0; // Zwiększyłem nieco padding dla lepszego "oddechu"
+      border-bottom: 1px solid #f9f9f9; // Delikatna linia oddzielająca (opcjonalnie)
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       .icon_wrapper {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         background-color: white;
         border-radius: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-right: 16px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         color: #555;
       }
 
@@ -35,12 +52,14 @@
           font-size: 16px;
           font-weight: 500;
           color: #1a1a1a;
+          display: block;
         }
       }
 
       .amount {
         font-size: 16px;
         font-weight: 600;
+        white-space: nowrap;
 
         &.positive {
           color: #3b82f6;
@@ -48,6 +67,10 @@
 
         &.negative {
           color: #ef4444;
+        }
+
+        &.neutral {
+          color: #6b7280;
         }
       }
     }
