@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
-import Header from "./components/dashboard/Header";
-import StatsWidget from "./components/dashboard/StatsWidget";
+import Dashboard from "./components/dashboard/Dashboard";
 import BottomNav from "./components/navigation/BottomNav";
 import { Briefcase, ShoppingCart, Coffee, Car } from "lucide-react";
 import {
@@ -56,14 +56,14 @@ const transactionsData = [
 
 function App() {
   return (
-    <div className={styles.container}>
-      {/* GÓRA: Stały nagłówek z powitaniem i saldem */}
-      <Header />
-      {/* ŚRODEK: Przewijana treść */}
-      <StatsWidget data={transactionsData} />
-      {/* DÓŁ: Stała nawigacja */}
-      <BottomNav />
-    </div>
+    <Router>
+      <div className={styles.container}>
+        <Routes>
+          <Route path="/" element={<Dashboard data={transactionsData} />} />
+        </Routes>
+        <BottomNav />
+      </div>
+    </Router>
   );
 }
 
