@@ -97,7 +97,6 @@ const StatsWidget = ({ data }) => {
             investment: styles.neutral,
           };
 
-          // Logika znaku:
           let prefix = "";
           if (t.type === "income") prefix = "+";
           if (t.type === "expense") prefix = "-";

@@ -2,64 +2,36 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
 import Dashboard from "./components/dashboard/Dashboard";
+import New_Transaction from "./components/new_transaction/New_Transaction";
 import BottomNav from "./components/navigation/BottomNav";
-import { Briefcase, ShoppingCart, Coffee, Car } from "lucide-react";
-import {
-  LayoutDashboard,
-  Wallet,
-  ArrowLeftRight,
-  TrendingUp,
-} from "lucide-react";
-
-const transactionsData = [
-  {
-    id: 1,
-    title: "Płaca",
-    amount: 600,
-    icon: Briefcase,
-    type: "income",
-    date: "2026-04-10",
-  },
-  {
-    id: 2,
-    title: "Zakupy",
-    amount: 250.5,
-    icon: ShoppingCart,
-    type: "expense",
-    date: "2026-06-10",
-  },
-  {
-    id: 3,
-    title: "Kawa",
-    amount: 18.0,
-    icon: Coffee,
-    type: "expense",
-    date: "2026-05-15",
-  },
-  {
-    id: 4,
-    title: "Paliwo",
-    amount: 300.0,
-    icon: Car,
-    type: "expense",
-    date: "2026-04-15",
-  },
-  {
-    id: 5,
-    title: "XTB",
-    amount: 500.0,
-    icon: TrendingUp,
-    type: "investment",
-    date: "2026-04-20",
-  },
-];
+import { Briefcase } from "lucide-react";
 
 function App() {
+  const [transactions, setTransactions] = useState([
+    {
+      id: 1,
+      title: "Wypłata",
+      amount: 600,
+      icon: Briefcase,
+      type: "income",
+      date: "2026-04-10",
+    },
+  ]);
+
+  const addTransaction = (newTr) => {
+    console.log("Aktualizuję stan w App o:", newTr);
+    setTransactions((prev) => [newTr, ...prev]);
+  };
+
   return (
     <Router>
       <div className={styles.container}>
         <Routes>
-          <Route path="/" element={<Dashboard data={transactionsData} />} />
+          <Route path="/" element={<Dashboard data={transactions} />} />
+          <Route
+            path="/add_transaction"
+            element={<New_Transaction onAdd={addTransaction} />}
+          />
         </Routes>
         <BottomNav />
       </div>

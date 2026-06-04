@@ -2,6 +2,8 @@
 
 .app_footer {
   width: 100%;
+  position: absolute;
+  bottom: 0;
   max-width: 430px;
   background-color: v.$white;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
@@ -69,11 +71,15 @@
       &:hover {
         border-color: v.$blue;
         color: v.$blue;
-        transform: translateY(-2px);
       }
 
       &:active {
         transform: scale(0.9);
+      }
+
+      &.active {
+        color: v.$blue;
+        border: 1.5px solid v.$blue;
       }
     }
   }

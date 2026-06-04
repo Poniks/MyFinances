@@ -16,9 +16,14 @@ const BottomNav = () => {
           <span>Przegląd</span>
         </NavLink>
 
-        <button className={styles.plus_button}>
+        <NavLink
+          to="/add_transaction"
+          className={({ isActive }) =>
+            `${styles.plus_button} ${isActive ? styles.active : ""}`
+          }
+        >
           <Plus size={32} />
-        </button>
+        </NavLink>
 
         <NavLink
           to="/stats"

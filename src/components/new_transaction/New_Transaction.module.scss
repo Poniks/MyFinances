@@ -1,0 +1,215 @@
+@use "../../styles/variables" as v;
+
+.new_transaction_container {
+  background-color: #f1f4f9;
+  min-height: 100vh;
+  max-width: 430px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+
+  .transaction_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .icon_btn {
+      width: 38px;
+      height: 38px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      cursor: pointer;
+    }
+  }
+
+  .transaction_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .form_card {
+      background: white;
+      border-radius: 16px;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+      min-height: 55px;
+
+      .label_text {
+        font-weight: 600;
+        color: #475569;
+        white-space: nowrap;
+      }
+
+      .input_wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .amount_input {
+          border: none;
+          outline: none;
+          background: transparent;
+          text-align: right;
+          font-weight: 700;
+          color: #1e293b;
+          font-size: 16px;
+          width: 100px;
+          appearance: textfield;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+          }
+        }
+
+        .currency {
+          font-weight: 700;
+          color: #1e293b;
+        }
+      }
+
+      .date_input {
+        border: none;
+        outline: none;
+        background: transparent;
+        text-align: right;
+        font-weight: 700;
+        color: #1e293b;
+        font-size: 15px;
+        font-family: inherit;
+        user-select: none;
+        caret-color: transparent;
+        pointer-events: none;
+        cursor: pointer;
+        flex: 1;
+
+        &::-webkit-calendar-picker-indicator {
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .type_toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+
+      .pill_wrapper {
+        display: flex;
+        background: #e2e8f0;
+        padding: 3px;
+        border-radius: 12px;
+        flex: 1;
+
+        button {
+          flex: 1;
+          border: none;
+          background: transparent;
+          padding: 8px 5px;
+          font-size: 12px;
+          font-weight: 600;
+          color: #64748b;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &.active_pill {
+            background: v.$blue;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .categories_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 10px 0;
+
+      .category_item {
+        background: white;
+        padding: 12px 5px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+        transition: transform 0.1s ease;
+
+        .icon_circle {
+          color: #64748b;
+        }
+
+        span {
+          font-size: 10px;
+          font-weight: 700;
+          color: #64748b;
+        }
+
+        &.is_active {
+          background: v.$blue;
+          .icon_circle,
+          span {
+            color: white;
+          }
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+
+    .description_field {
+      border: none;
+      outline: none;
+      border-radius: 16px;
+      padding: 15px;
+      background: white;
+      min-height: 80px;
+      font-family: inherit;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      resize: none;
+    }
+
+    .submit_button {
+      background: v.$blue;
+      color: white;
+      border: none;
+      padding: 18px;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(v.$blue, 0.2);
+      transition: opacity 0.2s;
+
+      &:active {
+        opacity: 0.9;
+      }
+    }
+  }
+}
