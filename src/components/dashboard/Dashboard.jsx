@@ -4,7 +4,7 @@ import StatsWidget from "./StatsWidget";
 const Dashboard = ({ data }) => {
   return (
     <>
-      <Header />
+      <Header transactions={data} />
       <StatsWidget data={data} />
     </>
   );
