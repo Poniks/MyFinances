@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.module.scss";
 import Dashboard from "./components/dashboard/Dashboard";
+import Statistics from "./components/statistics/Statistics";
 import New_Transaction from "./components/new_transaction/New_Transaction";
 import BottomNav from "./components/navigation/BottomNav";
 import { Briefcase } from "lucide-react";
@@ -31,6 +32,10 @@ function App() {
           <Route
             path="/add_transaction"
             element={<New_Transaction onAdd={addTransaction} />}
+          />
+          <Route
+            path="/statistics"
+            element={<Statistics transactions={transactions} />}
           />
         </Routes>
         <BottomNav />

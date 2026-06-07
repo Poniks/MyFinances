@@ -70,6 +70,7 @@ const New_Transaction = ({ onAdd }) => {
       title: formData.description || formData.category,
       amount: Math.abs(Number(formData.amount)),
       icon: categoryIcons[formData.category] || Banknote,
+      category: formData.category,
       type: formData.type === "Przychód" ? "income" : "expense",
       date: formData.date,
     };

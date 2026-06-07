@@ -26,7 +26,7 @@ const BottomNav = () => {
         </NavLink>
 
         <NavLink
-          to="/stats"
+          to="/statistics"
           className={({ isActive }) =>
             `${styles.nav_item} ${isActive ? styles.active : ""}`
           }
