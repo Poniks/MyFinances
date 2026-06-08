@@ -1,10 +1,10 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  user: "postgres", // nazwa użytkownika w pgAdmin (standardowo postgres)
-  password: "TWOJE_HASLO", //  hasło do pgAdmin
+  user: "postgres",
+  password: "admin",
   host: "localhost",
-  port: 5432, // Standardowy port PostgreSQL
+  port: 5432,
   database: "myfinances_db",
 });
 
