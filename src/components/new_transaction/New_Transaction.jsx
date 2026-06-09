@@ -139,8 +139,9 @@ const New_Transaction = ({ onAdd }) => {
               <button
                 key={t}
                 type="button"
-                className={formData.type === t ? styles.active_pill : ""}
+                className={`${formData.type === t ? styles.active_pill : ""} ${t === "Inwestycja" ? styles.disabled_pill : ""}`}
                 onClick={() => setFormData({ ...formData, type: t })}
+                disabled={t === "Inwestycja"}
               >
                 {t}
               </button>

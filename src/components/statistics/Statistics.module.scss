@@ -2,9 +2,10 @@
 
 .statistics_container {
   background-color: #f1f4f9;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 430px;
   padding: 25px 25px 100px 25px;
+  overflow-y: auto;
 
   .stats_header {
     display: flex;

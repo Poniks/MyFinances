@@ -9,6 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { Trash2 } from "lucide-react";
 
 ChartJS.register(
   CategoryScale,
@@ -19,7 +20,7 @@ ChartJS.register(
   Legend,
 );
 
-const StatsWidget = ({ data }) => {
+const StatsWidget = ({ data, onDelete }) => {
   const chartDataComputed = Array.from({ length: 3 }).map((_, i) => {
     const d = new Date();
     d.setDate(1); // Ustawianie dnia od 1st
@@ -111,9 +112,22 @@ const StatsWidget = ({ data }) => {
                 <span className={styles.title}>{t.title}</span>
               </div>
 
-              <div className={`${styles.amount} ${typeClasses[t.type] || ""}`}>
-                {prefix}
-                {t.amount.toLocaleString("pl-PL", { minimumFractionDigits: 2 })}
+              <div className={styles.action_group}>
+                <div
+                  className={`${styles.amount} ${typeClasses[t.type] || ""}`}
+                >
+                  {prefix}
+                  {t.amount.toLocaleString("pl-PL", {
+                    minimumFractionDigits: 2,
+                  })}
+                </div>
+
+                <button
+                  onClick={() => onDelete(t.id)}
+                  className={styles.delete_btn}
+                >
+                  <Trash2 size={16} />
+                </button>
               </div>
             </div>
           );

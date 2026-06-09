@@ -136,6 +136,13 @@
             background: v.$blue;
             color: white;
           }
+
+          &.disabled_pill {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+            background-color: transparent !important;
+          }
         }
       }
     }

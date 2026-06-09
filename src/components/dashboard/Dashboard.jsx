@@ -1,11 +1,11 @@
 import Header from "./Header";
 import StatsWidget from "./StatsWidget";
 
-const Dashboard = ({ data }) => {
+const Dashboard = ({ data, onDelete }) => {
   return (
     <>
       <Header transactions={data} />
-      <StatsWidget data={data} />
+      <StatsWidget data={data} onDelete={onDelete} />
     </>
   );
 };

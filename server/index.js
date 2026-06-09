@@ -39,6 +39,18 @@ app.post("/api/transactions", async (req, res) => {
   }
 });
 
+// 3. USUWANIE TRANSAKCJI (DELETE)
+app.delete("/api/transactions/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await pool.query("DELETE FROM transactions WHERE id = $1", [id]);
+    res.json({ message: "Transakcja pomyślnie usunięta" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ error: "Błąd serwera podczas usuwania transakcji" });
+  }
+});
+
 // Nasłuchiwanie
 app.listen(5000, () => {
   console.log("Serwer MyFinances śmiga na porcie 5000!");
